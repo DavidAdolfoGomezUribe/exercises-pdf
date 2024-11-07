@@ -1,29 +1,33 @@
-#Ejercicio 2: Calificación de una nota
-#Escribe un programa que determine si una nota numérica es "Aprobado" o "Reprobado" usando
-#if .
+#Ejercicio 3: Calculadora básica
+#Utiliza match para implementar una calculadora simple.
 #Enunciado:
-#Solicita al usuario una calificación y determina si la nota es aprobatoria (>= 60) o reprobatoria (<
-#60).
+#Crea una calculadora que solicite dos números y una operación matemática (+, -, *, /). Usa match
+#para realizar la operación correspondiente.
 
 
 name = input("Hello,please enter your name: ")
 while True:
     try:
-        print(f"Hello Mrs/Ms {name} this is a program for calculate if you are approved or not base on your final note.")
-        note = float(input("        Enter the number: "))
-    
-        if note < 0 :
-            print("        Enter a valid number")
-        else:
-            if note >= 60:
-                print(f"        Your are approvated with a {round(note)} note.")
-                break
-            else:
-                print(f"        Your are reprovated with a {round(note)} note.")
-                break
-            
+        
+        
+        print(f"""Hello Mrs/Ms {name} this is a program for a basic calculator.
+                select the operation that you want todo (+,-,/,*)""")
+        
+        variable = str(input(""))
+        match variable:
+            case "+":
+                a = float(input("Enter the first number: "))
+                b = float(input("Enter the second number: "))
+                total = a + b
+                print(f"        your total is {total} ")
+            case "-":
+                pass
+            case "/":
+                pass
+            case"*":
+                pass
+                                
     except:
         print("        Please enter a valid number") 
     
     
-      
