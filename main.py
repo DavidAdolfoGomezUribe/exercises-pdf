@@ -1,24 +1,29 @@
-#Ejercicio 1: Verificación de números pares e impares
-#Escribe un programa que verifique si un número es par o impar utilizando if .
+#Ejercicio 2: Calificación de una nota
+#Escribe un programa que determine si una nota numérica es "Aprobado" o "Reprobado" usando
+#if .
 #Enunciado:
-#Solicita al usuario que ingrese un número y verifica si es par o impar.
+#Solicita al usuario una calificación y determina si la nota es aprobatoria (>= 60) o reprobatoria (<
+#60).
 
 
-name = input("Hello,please enter your name:")
+name = input("Hello,please enter your name: ")
 while True:
     try:
-        print(f"Hello Mrs/Ms {name} this is a program for calculate if a number is even or odd.")
-        number = float(input("        Enter the number: "))
+        print(f"Hello Mrs/Ms {name} this is a program for calculate if you are approved or not base on your final note.")
+        note = float(input("        Enter the number: "))
     
-        if number % 2 == 0:
-            print(f"        Your number {number} is even.")
-            break
+        if note < 0 :
+            print("        Enter a valid number")
         else:
-            print(f"        Your number {number} is odd")
-            break
-        
+            if note >= 60:
+                print(f"        Your are approvated with a {round(note)} note.")
+                break
+            else:
+                print(f"        Your are reprovated with a {round(note)} note.")
+                break
+            
     except:
         print("        Please enter a valid number") 
     
     
-    
+      
