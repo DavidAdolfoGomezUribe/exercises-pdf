@@ -1,8 +1,7 @@
-#Ejercicio 6: Juego de adivinanza de números 
-#Escribe un programa que implemente un juego de adivinanza de números.
+#Ejercicio 7: Número positivo, negativo o cero 
+#Escribe un programa que determine si un número es positivo, negativo o cero usando 
 #Enunciado: 
-#El programa genera un número aleatorio entre 1 y 10. El usuario debe adivinar el número, y el 
-#programa indica si el número ingresado es mayor, menor o igual al número generado
+#Solicita al usuario que ingrese un número y determina si es positivo, negativo o cero
 
 import pygame
 import math
@@ -11,37 +10,27 @@ import time
 import random
 
 pygame.mixer.init()
-        
-
-
-name = input("Hello,please enter your name: ")
-
-       
+name = input("Hello, please enter your name: ")
+    
 
 while True:
     try:
-        rand = random.randint(1,10)         
-        print(f"""\nHello Mrs/Ms {name} this is a program for adivinate a number based on the numbers  (1 to 10) \n""")
+        
+        print(f"""\nHello Mrs/Ms {name} this is a program for calculate if a number is positive or negative\n""")
         awnser = int(input("        Put the number: "))
         
+    
         
-        while True : 
+        if awnser < 0:
+            print("\n        the number is negative")
             
-            if awnser < rand:
-                print("\n        the number is lower")
-                awnser = int(input("        Put other number: "))
 
-            elif awnser > rand:        
-                print("\n        the number is higher")
-                awnser = int(input("        Put other number: "))
-            elif awnser == rand:
-                print(f"        Excellent you have discovered the number that is {awnser}\n")
-                break
-        
-
-
-
-
+        elif awnser > 0:        
+            print("\n        the number is positive")
+                    
+        elif awnser == 0:
+            print("\n        the number is zero")
+            
 
         continueToAsk = input("    Do you want to play again?").strip().lower()
         
