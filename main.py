@@ -1,41 +1,55 @@
-#Ejercicio 5: Días de la semana 
-#Escribe un programa que, dado un número del 1 al 7, imprima el día correspondiente de la 
-#semana usando 
-#match .
-# Enunciado: 
-#Solicita al usuario un número del 1 al 7 y muestra el día de la semana correspondiente (1 = Lunes, 
-#7 = Domingo)
+#Ejercicio 6: Juego de adivinanza de números 
+#Escribe un programa que implemente un juego de adivinanza de números.
+#Enunciado: 
+#El programa genera un número aleatorio entre 1 y 10. El usuario debe adivinar el número, y el 
+#programa indica si el número ingresado es mayor, menor o igual al número generado
 
 import pygame
 import math
 import sys
 import time
+import random
 
 pygame.mixer.init()
         
-daysOfWeek=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+
 
 name = input("Hello,please enter your name: ")
 
+       
 
 while True:
     try:
-        print(f"""\nHello Mrs/Ms {name} this is a program for calculate the day of the week based on the numbres (1 to 7) \n""")
-        aDay = int(input("         ")) 
+        rand = random.randint(1,10)         
+        print(f"""\nHello Mrs/Ms {name} this is a program for adivinate a number based on the numbers  (1 to 10) \n""")
+        awnser = int(input("        Put the number: "))
         
-        if aDay > 0 and aDay <= 7 :
-            print(f"\n        For the number {aDay}. Your day is : ",daysOfWeek[ aDay-1 ],"\n")        
+        
+        while True : 
             
-        else:
-            print("\n        Enter a valid day\n")
+            if awnser < rand:
+                print("\n        the number is lower")
+                awnser = int(input("        Put other number: "))
 
-        continueToAsk = input("    Do you want to calculate again?").strip().lower()
+            elif awnser > rand:        
+                print("\n        the number is higher")
+                awnser = int(input("        Put other number: "))
+            elif awnser == rand:
+                print(f"        Excellent you have discovered the number that is {awnser}\n")
+                break
+        
+
+
+
+
+
+        continueToAsk = input("    Do you want to play again?").strip().lower()
         
         if continueToAsk == "yes" :
             pass
+        
         else:
-            
-            
+                    
             pygame.mixer.music.load("chad.mp3")
             pygame.mixer.music.set_volume(0.65)
             pygame.mixer.music.play()
@@ -71,7 +85,7 @@ while True:
             break
     except:
         print("    Its not a valid number\n") 
-        continueToAsk = input("    Do you want to calculate again?").strip().lower()
+        continueToAsk = input("    Do you want to play again?").strip().lower()
         
         if continueToAsk == "yes" :
             pass
@@ -116,5 +130,5 @@ while True:
 
 
 
-  #last line of code    
+   #last line of code    
     
